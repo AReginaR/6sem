@@ -335,14 +335,13 @@ $(document).ready(function () {
         var section5 = document.getElementById('section5');
         var table = document.createElement('table');
         table.setAttribute('border', '1');
-        table.className += " table";
+        table.className += "regular-400 table";
         table.style.width = '60%';
         table.style.color = 'black';
         table.style.marginLeft = '20%';
-        table.style.marginTop = '5vh';
         table.style.textAlign = 'center';
-        table.style.backgroundColor = '#EEE';
-        table.style.borderColor = 'black';
+        table.style.backgroundColor = 'rgba(86,90,205,0.46)';
+        table.style.borderColor = '#6266ea';
         var h4 = document.createElement('h4');
         h4.style.textAlign = 'center';
         h4.style.marginTop = '5vh';
@@ -350,7 +349,6 @@ $(document).ready(function () {
         h4.style.width = '60%';
         h4.style.padding = '3px';
         h4.style.marginLeft = '20%';
-        h4.style.backgroundColor = '#EEE';
         h4.innerHTML = "<h4>" + eventName + ". Дата: " + date + "</h4>";
         for (var i = 0; i < users.length; i++) {
             var row = table.insertRow(i);
@@ -360,7 +358,7 @@ $(document).ready(function () {
             var cell1 = row.insertCell(1);
             var data = ""
             for (var j = 0; j < list.length; j++) {
-                data += "<p>" + list[j].getUser().getName() + " " + list[j].getUser().getSurname() + " " + list[j].getAmount() + "</p>";
+                data += '<p>' + list[j].getUser().getName() + " " + list[j].getUser().getSurname() + " " + list[j].getAmount()+ '</p>';
             }
             cell1.innerHTML = data;
             cell.style.width = '50%';
