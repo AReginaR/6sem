@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <title>Purple Buzz HTML Template with Bootstrap 5 Beta 1</title>
+    <title>Pay Day</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="apple-touch-icon" href="assets/img/apple-icon.png">
@@ -16,14 +15,10 @@
     <link rel="stylesheet" href="assets/css/templatemo.css">
     <!-- Custom CSS -->
     <link rel="stylesheet" href="assets/css/custom.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 
-<!--
-    
-TemplateMo 561 Purple Buzz
-
-https://templatemo.com/tm-561-purple-buzz
-
--->
 </head>
 
 <body>
@@ -59,7 +54,7 @@ https://templatemo.com/tm-561-purple-buzz
                     </ul>
                 </div>
                 <div class="navbar align-self-center d-flex">
-                    <a class="nav-link" href="#"><i class='bx bx-user-circle bx-sm text-primary'></i></a>
+                    <a class="nav-link" href="login.html"><i class='bx bx-user-circle bx-sm text-primary'></i></a>
                 </div>
             </div>
         </div>
@@ -69,28 +64,56 @@ https://templatemo.com/tm-561-purple-buzz
 
     <div class="container-lg py-5">
         <div class="row" >
-            <div class="col-lg-4">
-                <p class=" h5 semi-bold-600">Участники</p>
-                <button type="button" class="btn btn-secondary text-white btn-lg rounded-pill px-lg-4"
-                            data-toggle="modal" data-target="#exampleModalParty">Добавить</button>
-
-            </div>
-            <div class="container col-lg-7">
+            <div class="col-lg-3">
                 <div class="text-center">
                     <button type="button" class="btn btn-secondary text-white btn-lg rounded-pill px-lg-4"
                             data-toggle="modal" data-target="#exampleModal">Создать мероприятие</button>
                 </div>
-                <div style="margin-top: 10px">
-                    <button type="button" class="btn btn-secondary text-white btn-lg rounded-pill px-lg-4"
-                            data-toggle="modal" data-target="#exampleModalLong">Добавить предмет</button>
-                    <button type="button" class="btn btn-secondary text-white btn-lg rounded-pill px-lg-4"
-                            data-toggle="modal" data-target="#modalWhoWhat">Кто и что</button>
-                    <form id="show_results">
-                    <button type="button" class="btn btn-secondary text-white btn-lg rounded-pill px-lg-4">
-<!--                            data-toggle="modal" data-target="#modalRes"--> Результат</button>
-                    </form>
-                </div>
+             </div>
+            <div class="col-lg-3 text-center">
+                <button type="button" class="btn btn-secondary text-white btn-lg rounded-pill px-lg-4"
+                            data-toggle="modal" data-target="#exampleModalParty">Добавить участников</button>
             </div>
+            <div class="col-lg-3 text-center">
+                <button type="button" class="btn btn-secondary text-white btn-lg rounded-pill px-lg-4"
+                        data-toggle="modal" data-target="#exampleModalLong">Добавить предмет</button>
+            </div>
+            <div class="col-lg-3 text-center">
+                <button type="button" class="btn btn-secondary text-white btn-lg rounded-pill px-lg-4"
+                        data-toggle="modal" data-target="#modalWhoWhat">Кто и что использовал</button>
+            </div>
+
+            <div class="text-center py-4">
+                <form id="show_results">
+                    <button type="submit" class="btn btn-secondary text-white btn-lg rounded-pill px-lg-4"> Результат</button>
+                </form>
+            </div>
+
+          
+
+
+
+<!--            <div class="container col-lg-7">-->
+<!--                <div class="text-center">-->
+<!--                    <button type="button" class="btn btn-secondary text-white btn-lg rounded-pill px-lg-4"-->
+<!--                            data-toggle="modal" data-target="#exampleModal">Создать мероприятие</button>-->
+<!--                </div>-->
+<!--                <div style="margin-top: 10px">-->
+<!--                    <button type="button" class="btn btn-secondary text-white btn-lg rounded-pill px-lg-4"-->
+<!--                            data-toggle="modal" data-target="#exampleModalLong">Добавить предмет</button>-->
+<!--                    <button type="button" class="btn btn-secondary text-white btn-lg rounded-pill px-lg-4"-->
+<!--                            data-toggle="modal" data-target="#modalWhoWhat">Кто и что</button>-->
+
+<!--                    <form id="show_results">-->
+<!--                        <button type="submit" class="btn btn-secondary text-white btn-lg rounded-pill px-lg-4"> Результат</button>-->
+<!--                    </form>-->
+
+<!--                    <div id="sectionRes">-->
+<!--                    </div>-->
+
+
+<!--                </div>-->
+<!--            </div>-->
 
         </div>
     </div>
@@ -102,23 +125,24 @@ https://templatemo.com/tm-561-purple-buzz
                     <h3 class="modal-title" id="exampleModalLongTitle1">Добавить мероприятие</h3>
                 </div>
                 <div class="modal-body">
-                    <div class="form-group">
+                    <form id="form_creating_event">
+                        <div class="form-group">
 
-                        <label for="usr"></label>
-                        <input type="text" class="form-control form-control-lg light-300" placeholder="Название" id="usr">
+                            <label for="usr"></label>
+                            <input type="text" class="form-control form-control-lg light-300" placeholder="Название" id="usr">
 
-                    </div>
-                    <br/>
-                    <h5 class="text-center">Дата</h5>
-                    <input type="date" class="form-control form-control-lg light-300" placeholder="Название" name="date" id="date">
-                    <br/>
-                    <div class="next-btn" id="nd_next">
-                        <a href="#section2">
-                            <button type="submit" class="btn btn-secondary btn-lg">Далее</button>
-                        </a>
-                    </div>
+                        </div>
+                        <br/>
+                        <h5 class="text-center">Дата</h5>
+                        <input type="date" class="form-control form-control-lg light-300" placeholder="Название" name="date" id="date">
+                        <br/>
+                        <div class="next-btn" id="nd_next">
+                                <button type="submit" class="btn btn-secondary btn-lg">Создать</button>
+                        </div>
+
+                    </form>
                 </div>
-                <div class="modal-footer">
+               <div class="modal-footer">
                     <button type="button" class="btn btn-secondary text-white btn-lg rounded-pill px-sm-4" data-dismiss="modal">Закрыть</button>
                 </div>
             </div>
@@ -141,7 +165,7 @@ https://templatemo.com/tm-561-purple-buzz
                             <label for="usr"></label>
                             <input type="text" class="form-control" id="surname"
                                    class="form-control form-control-lg light-300" placeholder="Фамилия"><br/>
-                            <label for="usr"></label>
+<!--                            <label for="usr"></label>-->
                             <input type="text" class="form-control" id="email"
                                    class="form-control form-control-lg light-300" placeholder="Email"><br/>
                             <div class="text-center">
@@ -213,28 +237,26 @@ https://templatemo.com/tm-561-purple-buzz
                     <h3 class="modal-title" id="exampleModalLongTitle3">Кто и что</h3>
                 </div>
                 <div class="modal-body">
+                        <div style="display: flex">
+                            <form id="form_adding_members">
+                                <div class="dropdown">
+                                    <select id="section4_users" class="form-control form-control-lg light-300 mb-3" >
+                                        <option selected>Кто</option>
+                                    </select>
+                                </div>
 
-                    <div style="display: flex">
-                        <form id="form_adding_members">
-                            <div class="dropdown">
-                                <select id="section4_users" class="form-control form-control-lg light-300 mb-3" >
-                                    <option selected>Кто</option>
-                                </select>
-                            </div>
-
-                            <div class="dropdown">
-                                <select id="section4_products" class="form-control form-control-lg light-300 mb-3">
-                                    <option selected>Что</option>
-                                </select>
-                            </div>
+                                <div class="dropdown">
+                                    <select id="section4_products" class="form-control form-control-lg light-300 mb-3">
+                                        <option selected>Что</option>
+                                    </select>
+                                </div>
 
 
-                            <button type="submit" class="btn btn-secondary text-white btn-lg rounded-pill px-sm-4">
-                                Добавить в список
-                            </button>
-                        </form>
-                    </div>
-
+                                <button type="submit" class="btn btn-secondary text-white btn-lg rounded-pill px-sm-4">
+                                    Добавить в список
+                                </button>
+                            </form>
+                        </div>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary text-white btn-lg rounded-pill px-sm-4" data-dismiss="modal">Закрыть</button>
@@ -290,7 +312,8 @@ https://templatemo.com/tm-561-purple-buzz
             });
         });
     </script>
-    <script src="../js/mainScript.js"></script>
+    <script src="js/mainScript.js"></script>
+    <script src="js/jquery.scrollify.js"></script>
     <!-- Templatemo -->
     <script src="assets/js/templatemo.js"></script>
     <!-- Custom -->
